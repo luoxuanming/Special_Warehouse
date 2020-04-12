@@ -1,0 +1,73 @@
+<%- include('../templates/head') %>
+
+<body>
+    <div class="container">
+        <h3>涟漪效果</h3>
+        <!-- 按钮============  涟漪效果按钮 点击泛起涟漪 -->
+        <a class="btn-ripple" href="javascript:;">button</a>
+        <a class="btn-ripple" href="javascript:;">button</a>
+        <hr>   
+
+        <h3>萤火虫效果</h3>
+        <a class="btn-firefly" href="javascript:;">萤火虫</a>
+    </div>
+    <%- include('../templates/foot') %>
+</body>
+<script>
+
+    btnRipple();
+    btnFireFly();
+
+    // 点击泛起涟漪
+    function btnRipple() {
+        $('body').on('click', '.btn-ripple', function (e) {
+            var duration = 1;
+            var x = e.clientX - e.target.offsetLeft;
+            var y = e.clientXY - e.target.offsetTop;
+
+            var ripples = document.createElement('span');
+            $(ripples).addClass("btn-ripple--ripple");
+            ripples.style.setProperty('--duration', duration + 's')
+            ripples.style.left = x + 'px';
+            ripples.style.top = y + 'px';
+            $(this).append(ripples);
+
+            setTimeout(() => {
+                ripples.remove()
+            }, duration * 1000);
+        })
+    }
+
+    //萤火虫
+    function btnFireFly() {
+        var lghLen = 8;
+        var $Btn = $('.btn-firefly');
+        var getTxt = $Btn.text();
+        var $Txt = $('<p class="btn-firefly--text"></p>');
+        var $Div = $('<div class="btn-firefly--lightning"></div>');
+        var $Ul = $('<ul></ul>');
+        var $Li = "";
+        for(var i = 0; i < lghLen; i++) {
+            $Li+= "<li></li>";
+        }
+        $Ul.append($Li); 
+        $Ul.appendTo($Div);
+        $Txt.append(getTxt);
+        $Btn.html($Txt);
+        $Btn.hover(function() {
+            $Div.appendTo($Btn);
+            $('.btn-firefly--lightning li').each(function(i){
+            $(this).css({
+                left: i*(100/lghLen) + "%",
+                bottom: commonJs.fn.getRandon(-20, 10) + "%",
+                animationDuration:  commonJs.fn.getRandon(1, 5) + "s"
+            });
+        });
+        },function() {
+            $Div.remove();
+        });
+        
+    }
+</script>
+
+</html>

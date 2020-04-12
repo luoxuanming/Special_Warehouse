@@ -1,0 +1,14 @@
+{
+    "site": "ejs-demo",
+    "styles": [
+        "../css/custom-bootstrap.css",
+        "../css/global.css"
+    ],
+    "scripts": [
+        "../libs/jquery/jquery.min.js",
+        "../libs/bootstrap/dist/bootstrap.min.js",
+        "../libs/icheck/icheck.min.js",
+        "../libs/nicescroll/jquery.nicescroll.js",
+        "../js/global.js"
+    ]
+}
