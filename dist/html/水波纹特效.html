@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>首页 - ejs-demo</title>
+<meta name="renderer" content="webkit">
+
+<link rel="stylesheet" href="../css/custom-bootstrap.css">
+<link rel="stylesheet" href="../css/global.css">
+
+<!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<style>
+    .ripple-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;    
+        transform: translate(-50%,-50%) rotateX(70deg);
+    }
+    .ripple {
+        position: fixed;
+        top: 0;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle closest-side, transparent 80%, #a3b1f1);
+        border-radius: 50%;
+        animation: ripple 4s linear infinite;
+    }
+
+    @keyframes ripple {
+        from {
+            
+        }
+
+        to {
+            /* width: 400px;
+            height: 400px;
+            top: 20px; */
+            transform: scale(15, 15);
+            opacity: 0;
+        }
+    }
+
+    .r2 {
+        animation-delay: .8s;
+    }
+
+    .r3 {
+        animation-delay: 1.6s;
+    }
+
+    .r4 {
+        animation-delay: 2.4s;
+    }
+
+    .r5 {
+        animation-delay: 3.2s;
+    }
+
+    .r6 {
+        animation-delay: 4s;
+    }
+</style>
+
+<body>
+    <div class="ripple-box">
+        <div class="ripple r1"></div>
+        <div class="ripple r2"></div>
+        <div class="ripple r3"></div>
+        <div class="ripple r3"></div>
+        <div class="ripple r3"></div>
+        <div class="ripple r4"></div>
+    </div>
+    
+<script src="../libs/jquery/jquery.min.js"></script>
+<script src="../libs/bootstrap/dist/bootstrap.min.js"></script>
+<script src="../libs/icheck/icheck.min.js"></script>
+<script src="../libs/nicescroll/jquery.nicescroll.js"></script>
+<script src="../js/global.js"></script>
+
+
+</body>
+
+</html>
