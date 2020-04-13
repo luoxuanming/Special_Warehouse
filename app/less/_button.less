@@ -1,3 +1,6 @@
+a:hover {
+  color: #ffffff;
+}
 // 涟漪效果
 .btn-ripple {
   position: relative;
@@ -37,20 +40,18 @@
   }
 }
 
-// 萤火虫
+// 萤火虫效果
 .btn-firefly {
   display: inline-block;
   width: 180px;
   height: 60px;
   position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background: linear-gradient(to right, #6eb46e 10%,#55b455);
   border-radius: 40px;
-  opacity: .88c;
+  opacity: .88;
   cursor: pointer;
   transition: all 1s;
+  color: transparent;
   .btn-firefly--text {
     line-height: 60px;
     text-align: center;
@@ -95,6 +96,42 @@
   @keyframes fireflymove {
     100% {
       bottom: 100%;
+      opacity: .2;
     }
+  }
+}
+
+//光效效果
+.btn-lightingeffect {
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 14px 50px;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  &::before {
+    --size: 0;
+    content: "";
+    position: absolute;
+    /* 修改left和top值为js定义的css变量 */
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    /* 径向渐变，形状为圆形，取的半径为圆心到圆心最近的边的距离，开始颜色为 #a3b1f1, 结束颜色为透明（transparent）*/
+    background: radial-gradient(circle closest-side, #a3b1f1, transparent);
+    transform: translate(-50%, -50%);
+    transition: all .2s ease, left 0%, top 0%;
+  }
+  &:hover::before {
+    --size: 200px;
   }
 }

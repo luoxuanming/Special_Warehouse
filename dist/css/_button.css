@@ -1,3 +1,6 @@
+a:hover {
+  color: #ffffff;
+}
 .btn-ripple {
   position: relative;
   display: inline-block;
@@ -58,17 +61,14 @@
   width: 180px;
   height: 60px;
   position: relative;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background: -webkit-linear-gradient(left, #6eb46e 10%, #55b455);
   background: linear-gradient(to right, #6eb46e 10%, #55b455);
   border-radius: 40px;
-  opacity: .88c;
+  opacity: .88;
   cursor: pointer;
   -webkit-transition: all 1s;
   transition: all 1s;
+  color: transparent;
 }
 .btn-firefly .btn-firefly--text {
   line-height: 60px;
@@ -118,12 +118,51 @@
 @-webkit-keyframes fireflymove {
   100% {
     bottom: 100%;
+    opacity: .2;
   }
 }
 @keyframes fireflymove {
   100% {
     bottom: 100%;
+    opacity: .2;
   }
+}
+.btn-lightingeffect {
+  position: relative;
+  display: inline-block;
+  background-image: -webkit-linear-gradient(315deg, #667eea 0%, #764ba2 100%);
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 14px 50px;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.btn-lightingeffect::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  /* 修改left和top值为js定义的css变量 */
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  /* 径向渐变，形状为圆形，取的半径为圆心到圆心最近的边的距离，开始颜色为 #a3b1f1, 结束颜色为透明（transparent）*/
+  background: -webkit-radial-gradient(circle closest-side, #a3b1f1, transparent);
+  background: radial-gradient(circle closest-side, #a3b1f1, transparent);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all .2s ease, left 0%, top 0%;
+  transition: all .2s ease, left 0%, top 0%;
+}
+.btn-lightingeffect:hover::before {
+  --size: 200px;
 }
 
 /*# sourceMappingURL=_button.css.map */
