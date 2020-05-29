@@ -2,6 +2,7 @@
     "site": "ejs-demo",
     "styles": [
         "../css/custom-bootstrap.css",
+        "http://at.alicdn.com/t/font_1631400_rzrszko56gq.css",
         "../css/global.css"
     ],
     "scripts": [

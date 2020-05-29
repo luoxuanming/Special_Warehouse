@@ -21,10 +21,29 @@
 
   <h3>悬浮线框效果</h3>
   <a class="btn-wireframe" href="javascript:;">hover me</a>
+  <hr>
+
+  <h3>按钮3D分层悬停效果</h3>
+  <div style="display: grid;height: 180px;place-items:center;background-color: #000;">
+    <div class="layer-icons">
+      <%for(let i=0;i<3;i++){%>
+      <a href="###">
+        <div class="layer">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="iconfont el-icon-alitwitter"></span>
+        </div>
+        <div class="text">Instagram</div>
+      </a>
+      <%}%>
+    </div>
+  </div>
   <%- include('../templates/foot') %>
 </body>
 <script>
- 
+
   btnRipple();
   btnFireFly();
   btnLightingEffect();

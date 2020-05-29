@@ -129,6 +129,8 @@ svg {
   position: relative;
   width: 150px;
   height: 150px;
+  -webkit-animation: easeLoad 2s linear infinite;
+          animation: easeLoad 2s linear infinite;
 }
 svg circle {
   width: 100%;
@@ -141,6 +143,8 @@ svg circle {
           transform: translate(5px, 5px);
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
+  -webkit-animation: aniCircle 4s linear infinite;
+          animation: aniCircle 4s linear infinite;
 }
 @-webkit-keyframes aniCircle {
   0%,
